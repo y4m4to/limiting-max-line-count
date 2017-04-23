@@ -1,0 +1,16 @@
+{
+  "name": "limiting-max-line-count",
+  "version": "1.0.0",
+  "description": "This plugin limits a max line count.",
+  "main": "limiting-max-line-count.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/y4m4to/limiting-max-line-count.git"
+  },
+  "author": "y4m4to",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/y4m4to/limiting-max-line-count/issues"
+  },
+  "homepage": "https://github.com/y4m4to/limiting-max-line-count#readme"
+}
