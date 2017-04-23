@@ -1,4 +1,10 @@
-(function ($) {
+function (factory) {
+  if (typeof module === 'object' && typeof module.exports === 'object') {
+    factory(require('jquery'), window, document);
+  } else {
+    factory(jQuery, window, document);
+  }
+}(function($, window, document, undefined) {
   /**
    * This fucntion limits max line count.
    * @param {number} lineCount
@@ -28,6 +34,4 @@
       }
     }
   }
-
-$('.container').limitMaxLineCount(4);
-}(jQuery));
+}));
