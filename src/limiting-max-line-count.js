@@ -4,13 +4,13 @@
   } else {
     factory(jQuery, window, document);
   }
-}(function($, window, document, undefined) {
+}(function($) {
   /**
    * This fucntion limits max line count.
    * @param {number} lineCount
    */
   $.fn.limitMaxLineCount = function (lineCount) {
-    var style = '';
+    let style = '';
     style += '<style>';
     style +=  '.limit-target::after {';
     style +=    'display: inline-block;';
@@ -28,15 +28,15 @@
     $('head').append(style);
 
     this.each(function() {
-      var targetHeight       = this.scrollHeight;
-      var targetFontSize     = parseFloat($(this).css('font-size'));
-      var targetLineHeight   = parseFloat($(this).css('line-height')) / targetFontSize;
-      var DECIMAL_PLACE      = 2;
+      let targetHeight       = this.scrollHeight;
+      let targetFontSize     = parseFloat($(this).css('font-size'));
+      let targetLineHeight   = parseFloat($(this).css('line-height')) / targetFontSize;
+      let DECIMAL_PLACE      = 2;
       targetLineHeight       = targetLineHeight.toFixed(DECIMAL_PLACE);
-      var sentenceBodyHeight = targetLineHeight * lineCount;
-      var viewingArea        = Math.round(targetLineHeight * lineCount * targetFontSize);
+      let sentenceBodyHeight = targetLineHeight * lineCount;
+      let viewingArea        = Math.round(targetLineHeight * lineCount * targetFontSize);
 
-      var styleOptions = {
+      let styleOptions = {
         'position'   : 'relative',
         'overflow'   : 'hidden',
         'max-height' : sentenceBodyHeight +'em',
