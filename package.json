@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "This plugin limits a max line count.",
   "main": "limiting-max-line-count.js",
+  "scripts": {
+    "build": "webpack webpack.config.js",
+    "watch": "webpack -w webpack.config.js --devtool=eval"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/y4m4to/limiting-max-line-count.git"
@@ -12,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/y4m4to/limiting-max-line-count/issues"
   },
-  "homepage": "https://github.com/y4m4to/limiting-max-line-count#readme"
+  "homepage": "https://github.com/y4m4to/limiting-max-line-count#readme",
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "jquery": "^3.2.1",
+    "webpack": "^2.4.1"
+  }
 }
