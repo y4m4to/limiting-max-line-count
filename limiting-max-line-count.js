@@ -1,4 +1,4 @@
-;(function (factory) {
+(function (factory) {
   if (typeof module === 'object' && typeof module.exports === 'object') {
     factory(require('jquery'), window, document);
   } else {
@@ -10,9 +10,9 @@
    * @param {number} lineCount
    */
   $.fn.limitMaxLineCount = function (lineCount) {
-    let style = '';
+    var style = '';
     style += '<style>';
-    style +=  '.limit-target::after {';
+    style += '.limit-target::after {';
     style +=    'display: inline-block;';
     style +=    "content: '...';";
     style +=    'position: absolute;';
@@ -23,25 +23,25 @@
     style +=    'background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0.85) 20%, rgba(255,255,255,1) 40%, rgba(255,255,255,1) 100%);';
     style +=    'background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0.85) 20%, rgba(255,255,255,1) 40%, rgba(255,255,255,1) 100%);';
     style +=    'background: linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0.85) 20%, rgba(255,255,255,1) 40%, rgba(255,255,255,1) 100%);';
-    style += '}'
+    style += '}';
     style += '</style>';
     $('head').append(style);
 
     this.each(function() {
-      let targetHeight       = this.scrollHeight;
-      let targetFontSize     = parseFloat($(this).css('font-size'));
-      let targetLineHeight   = parseFloat($(this).css('line-height')) / targetFontSize;
-      let DECIMAL_PLACE      = 2;
+      var targetHeight       = this.scrollHeight;
+      var targetFontSize     = parseFloat($(this).css('font-size'));
+      var targetLineHeight   = parseFloat($(this).css('line-height')) / targetFontSize;
+      var DECIMAL_PLACE      = 2;
       targetLineHeight       = targetLineHeight.toFixed(DECIMAL_PLACE);
-      let sentenceBodyHeight = targetLineHeight * lineCount;
-      let viewingArea        = Math.round(targetLineHeight * lineCount * targetFontSize);
+      var sentenceBodyHeight = targetLineHeight * lineCount;
+      var viewingArea        = Math.round(targetLineHeight * lineCount * targetFontSize);
 
-      let styleOptions = {
+      var styleOptions = {
         'position'   : 'relative',
         'overflow'   : 'hidden',
         'max-height' : sentenceBodyHeight +'em',
         'word-break' : 'break-all'
-      }
+      };
       $(this).css(styleOptions);
 
       if (targetHeight > viewingArea) {
